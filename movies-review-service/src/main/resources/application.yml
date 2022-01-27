@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: local
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: movie
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - test
+  mongodb:
+    embedded:
+      version: 3.5.5
